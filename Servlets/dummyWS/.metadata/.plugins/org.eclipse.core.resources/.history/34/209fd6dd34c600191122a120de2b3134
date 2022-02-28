@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id ="messageBean" class="com.ty.springcore.beans.MessageBean2" scope="prototype">
+<property name="message" value="Hello World beans!!!"></property>
+</bean>
+<bean id ="newMessage" class="com.ty.springcore.beans.MessageBean3" init-method="init" destroy-method="destroy">
+<property name ="message" value="New Message"/>
+</bean>
+</beans>

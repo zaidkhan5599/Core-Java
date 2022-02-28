@@ -1,0 +1,92 @@
+package com.capg.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.capg.beans.Client;
+import com.capg.beans.Contract;
+import com.capg.beans.Orders;
+
+public class ClientJDBCImpl implements ClientDao {
+
+	String url ="jdbc:mysql://localhost:3306/FMs?user=root&password=root";
+	Connection connection;
+	ClientJDBCImpl() throws SQLException
+	{
+	connection = DriverManager.getConnection(url);
+	}
+	@Override
+	public boolean changePassword(Integer client_id, String oldpassword, String newpassword) {
+		String query="select password from client where id =?";
+		String password ="Update client set password=? where id=?";
+		try(PreparedStatement statement = connection.prepareStatement(query);PreparedStatement statement2= connection.prepareStatement(password)){
+			statement.setInt(1, client_id);
+			ResultSet resultSet=statement.executeQuery();
+			Integer password1=resultSet.getInt("password");
+			if(password1.equals(oldpassword))
+			{
+				statement2.setString(1, newpassword);
+				statement2.setInt(2, client_id);
+				return true;
+				
+			}
+			else
+			{
+				return false;
+			}
+		
+			
+		}catch(SQLException exception)
+		{
+			exception.getStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public Contract addContract(Integer clientId, Contract c1, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contract searchContract(Integer contract_id, Integer client_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contract updateContract(Integer cust_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Client deleteContract(Integer contract_id, Integer client_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addOrder(Integer clientId, Orders ord) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Orders deleteOrder(Integer orderId, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Orders searchOrder(Integer orderId, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

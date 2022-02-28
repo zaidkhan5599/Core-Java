@@ -1,0 +1,5 @@
+package com.ty.springcore.annotationtest;
+
+public class EmployeeAnnotationTest {
+
+}

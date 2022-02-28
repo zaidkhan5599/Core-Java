@@ -1,0 +1,11 @@
+package com.ty.jdbctest;
+
+public class Int1 implements Int{
+
+	@Override
+	public void cl() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id ="employee" class="com.ty.springcore.beans.EmployeeInfoBean" autowire="constructor">
+<constructor-arg name="id" value="101"></constructor-arg>
+<constructor-arg name="name" value="Bharat"></constructor-arg>
+</bean>
+<bean id ="departmentinfo" class="com.ty.springcore.beans.DepartmentInfo">
+<property name ="deptId" value="777"></property>
+<property name="departName" value="Dev"></property>
+</bean>
+</beans>

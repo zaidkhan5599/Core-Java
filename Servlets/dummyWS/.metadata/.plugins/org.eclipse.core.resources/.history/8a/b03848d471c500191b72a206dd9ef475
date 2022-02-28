@@ -1,0 +1,6 @@
+package com.ty.springcore.beans;
+
+public class MessageBean {
+	
+
+}

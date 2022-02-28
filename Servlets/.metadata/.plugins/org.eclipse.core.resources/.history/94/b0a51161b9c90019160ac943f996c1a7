@@ -1,0 +1,127 @@
+package com.capg.dao;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.capg.beans.Client;
+import com.capg.beans.Contract;
+import com.capg.beans.Orders;
+
+
+public class AdminJDBCImpl implements AdminDao{
+	final String URL ="jdbc:mysql://localhost:3306/FMs?user=rootpassword=root";
+	Connection connection = null;
+	AdminJDBCImpl() throws SQLException
+	{
+	   connection =	DriverManager.getConnection(URL);
+	}
+	@Override
+	public boolean createProf(Client client) {
+		String query ="Insert into client values(?,?,?,?,?,?)";
+try(PreparedStatement statement = connection.prepareStatement(query);)
+{
+	statement.setInt(1, client.getId());
+	statement.setString(2, client.getEmail());
+	statement.setString(3, client.getCust_name());
+	statement.setString(4, client.getAddress());
+	statement.setString(5, client.getTelephone());
+	statement.setString(6, client.getPassword());
+	 int i=statement.executeUpdate();
+	 if(i>0)
+	 {
+		 System.out.println("Data Inserted");
+		 return true;
+	 }
+	 else
+	 {
+		 return false;
+	 }
+	
+}catch(SQLException exception)
+{
+	exception.printStackTrace();
+}
+return false;
+
+		
+		
+}
+		
+	
+	@Override
+	public Client deleteProf(Integer client_id) {
+		String sql1="select *from client where id=?";
+	    String sql ="delete from client where client_id=?";
+	    Client client = new Client();
+		try(PreparedStatement preparedStatement= connection.prepareStatement(sql1);PreparedStatement preparedStatement2= connection.prepareStatement(sql);)
+		{
+			preparedStatement.setInt(1, client_id);
+			boolean b=preparedStatement.execute();
+			if(b)
+			{
+				ResultSet result = preparedStatement.getResultSet();
+			
+			while(result.next())
+			{
+			client.setId(result.getInt(1));
+			client.setEmail(result.getString(2));
+			client.setAddress(result.getString("address"));
+			client.setCust_name(result.getString("client_name"));
+			client.setTelephone(Long.toString(result.getLong("telephone")));
+			client.setPassword(result.getString("password"));
+			}
+			 int delete=preparedStatement2.executeUpdate();
+			 if(delete>0) {
+			 
+				 System.out.println("Deletion of particular record was successfull");
+			 }
+			 else {
+			        System.out.println("Deletion couldn't takes place");
+				 }
+			 return client;
+			}
+			else
+			{
+				return null;
+			}
+		
+		}catch(SQLException exception)
+		{
+			
+		}
+		return client;
+	}
+	@Override
+	public boolean updateProf(Integer clientId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Client searchClient(Integer clientid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void displayContracts() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public List<Orders> displayAllorders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Client> displayAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+	

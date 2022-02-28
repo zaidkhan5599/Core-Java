@@ -1,0 +1,19 @@
+package com.ty.springcore.baseInfobean;
+
+public class EmployeeInfoBean {
+private int id;
+private String namee;
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getNamee() {
+	return namee;
+}
+public void setNamee(String namee) {
+	this.namee = namee;
+}
+
+}

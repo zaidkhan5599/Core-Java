@@ -1,0 +1,61 @@
+package com.capg.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.capg.beans.Client;
+import com.capg.beans.Contract;
+import com.capg.beans.Orders;
+
+public class ClientJDBCImpl implements ClientDao {
+
+	String url ="jdbc:mysql://localhost:3306/FMs?user=root&password=root";
+	Connection connection = DriverManager.getConnection(url);
+	@Override
+	public boolean changePassword(Integer client_id, String oldpassword, String newpassword) {
+		
+	}
+
+	@Override
+	public Contract addContract(Integer clientId, Contract c1, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contract searchContract(Integer contract_id, Integer client_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contract updateContract(Integer cust_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Client deleteContract(Integer contract_id, Integer client_id, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addOrder(Integer clientId, Orders ord) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Orders deleteOrder(Integer orderId, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Orders searchOrder(Integer orderId, String Password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

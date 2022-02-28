@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id ="testing" class="com.ty.springcore.beans.DepartmentInfo" autowire-candidate="true">
+<property name ="deptId" value="777"></property>
+<property name="departName" value="Testing"></property>
+</bean>
+<bean id ="HR" class="com.ty.springcore.beans.DepartmentInfo" autowire-candidate="false">
+<property name ="deptId" value="11"></property>
+<property name="departName" value="HR"></property>
+
+</bean>
+<bean id ="DEV" class="com.ty.springcore.beans.DepartmentInfo" autowire-candidate="false">
+<property name ="deptId" value="15"></property>
+<property name="departName" value="Dev"></property>
+</bean>
+</beans>

@@ -1,0 +1,5 @@
+package com.ty.jpaapp.dto;
+
+public class Movie {
+
+}

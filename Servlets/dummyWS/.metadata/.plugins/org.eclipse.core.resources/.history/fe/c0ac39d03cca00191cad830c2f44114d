@@ -1,0 +1,6 @@
+package com.capg.StudentJPA.dto;
+
+@Entity
+public class Student {
+
+}

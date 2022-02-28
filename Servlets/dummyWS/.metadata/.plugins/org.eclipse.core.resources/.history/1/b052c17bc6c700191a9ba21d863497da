@@ -1,0 +1,5 @@
+package com.ty.springcore.config;
+
+public class MessageConfig {
+
+}

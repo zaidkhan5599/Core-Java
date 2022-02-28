@@ -1,0 +1,6 @@
+package com.ty.spring;
+
+public class MessageBean implements  {
+	
+
+}

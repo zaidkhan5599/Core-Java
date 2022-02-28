@@ -1,0 +1,32 @@
+package com.ty.springcore.beans;
+
+public class EmployeeInfoBean {
+	public EmployeeInfoBean(int id, String name, DepartmentInfo departmentinfo) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.departmentinfo = departmentinfo;
+	}
+	private int id;
+	private String name;
+	private DepartmentInfo departmentinfo;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public DepartmentInfo getDepartmentinfo() {
+		return departmentinfo;
+	}
+	public void setDepartmentinfo(DepartmentInfo departmentinfo) {
+		this.departmentinfo = departmentinfo;
+	}
+
+}

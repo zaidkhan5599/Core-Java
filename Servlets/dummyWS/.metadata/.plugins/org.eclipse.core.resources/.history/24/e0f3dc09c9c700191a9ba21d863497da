@@ -1,0 +1,15 @@
+package com.ty.springcore.config;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.ty.springcore.beans.MessageBean;
+
+public class MessageTest {
+	public static void main(String[] args) {
+		ApplicationContext context = new AnnotationConfigApplicationContext(MessageConfig.class);
+		MessageBean messageBean = context.getBean(MessageBean.class);
+		System.out.println(messageBean.getMessage());
+	}
+
+}

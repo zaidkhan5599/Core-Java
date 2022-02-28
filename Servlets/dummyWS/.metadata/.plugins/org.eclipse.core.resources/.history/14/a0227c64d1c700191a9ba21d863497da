@@ -1,0 +1,30 @@
+package com.ty.springcore.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.ty.springcore.baseInfobean.DepartmentInfo;
+import com.ty.springcore.baseInfobean.EmployeeInfoBean;
+
+@Configuration
+public class EmployeeConfig {
+	
+	@Bean 
+	public EmployeeInfoBean getEmployeeInfoBean()
+	{
+	EmployeeInfoBean employeeInfoBean = new EmployeeInfoBean();
+	employeeInfoBean.setId(101);
+	employeeInfoBean.setNamee("Bharat");
+	return employeeInfoBean;
+	}
+	
+	@Bean
+    public DepartmentInfo getDepartmentInfo()
+    {
+	 DepartmentInfo departmentInfo = new DepartmentInfo();
+	 departmentInfo.setDepartName("HR");
+	 departmentInfo.setDeptId(111);
+	 return departmentInfo;
+    }
+
+}

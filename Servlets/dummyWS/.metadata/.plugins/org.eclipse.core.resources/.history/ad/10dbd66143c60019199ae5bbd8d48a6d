@@ -1,0 +1,21 @@
+package com.ty.spring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ty.springcore.beans.EmployeeInfoBean;
+
+public class EmployeeTest {
+	public static void main(String[] args) {
+		ApplicationContext cont = new ClassPathXmlApplicationContext("employeeConfig.xml");
+		EmployeeInfoBean employeeInfoBean =cont.getBean("employee", EmployeeInfoBean.class);
+		System.out.println("Id :"+employeeInfoBean.getId());
+		System.out.println("Name :"+employeeInfoBean.getName());
+		System.out.println("Deaprtment id :"+employeeInfoBean.getDepartmentinfo().getDeptId());
+		System.out.println("Department name is :"+employeeInfoBean.getDepartmentinfo().getDepartName());
+	}
+
+}
+
+
+

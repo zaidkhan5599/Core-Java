@@ -1,0 +1,12 @@
+1566192160864	Rename type 'AdminDao'
+1566192200415	Rename type 'ClientDao'
+1566192261280	Rename type 'HaulierDao'
+1566192289621	Rename type 'ResourseDao'
+1566192705099	Delete elements
+1566192773539	Delete element
+1566192968382	Copy compilation units
+1566193118164	Rename compilation unit 'AdminImpl.java'
+1566193287765	Rename compilation unit 'ClientImpl.java'
+1566193525141	Rename type 'HaulierImpl'
+1566193712012	Rename type 'ResourcesImpl'
+1566194087805	Delete element

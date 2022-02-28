@@ -1,0 +1,11 @@
+package com.ty.jpaapp.dto;
+
+import java.io.Serializable;
+
+public class Movie  implements Serializable {
+	private int id;
+	private String name;
+	private String rating;
+	
+
+}

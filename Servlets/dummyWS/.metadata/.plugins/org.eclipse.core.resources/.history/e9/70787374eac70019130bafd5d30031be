@@ -1,0 +1,32 @@
+package com.ty.springcore.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.ty.springcore.baseInfobean.Dog;
+import com.ty.springcore.baseInfobean.Pet;
+import com.ty.springcore.baseInfobean.Tiger;
+
+@Configuration
+public class PetConfig {
+	
+	@Bean
+	public Pet getPet()
+	{
+		return new Pet();
+	}
+	
+	@Bean
+	public Tiger getAnimal()
+	{
+		return new Tiger();
+		
+	}
+	@Bean
+	public Dog getDog()
+	{
+		return new Dog();
+	}
+	
+
+}

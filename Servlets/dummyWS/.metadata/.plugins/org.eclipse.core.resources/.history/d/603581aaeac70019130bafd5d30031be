@@ -1,0 +1,5 @@
+package com.ty.springcore.baseInfobean;
+
+public class Pet {
+
+}

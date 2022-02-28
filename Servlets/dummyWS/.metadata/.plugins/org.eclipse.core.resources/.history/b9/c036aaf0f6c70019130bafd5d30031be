@@ -1,0 +1,9 @@
+package com.ty.spring;
+
+public class MessageBPPTest   {
+	public static void main(String[] args) {
+		
+	}
+	
+
+}

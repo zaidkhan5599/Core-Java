@@ -1,0 +1,5 @@
+package com.ty.springcore.annotationInterface;
+
+public class Animal {
+
+}

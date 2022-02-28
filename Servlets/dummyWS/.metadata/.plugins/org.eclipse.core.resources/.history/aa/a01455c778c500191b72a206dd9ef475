@@ -1,0 +1,19 @@
+package com.ty.springcore.beans;
+
+public class MessageBean {
+	private String message;
+ MessageBean()
+ {
+	System.out.println("Inside default"); 
+ }
+	
+ public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+
+}

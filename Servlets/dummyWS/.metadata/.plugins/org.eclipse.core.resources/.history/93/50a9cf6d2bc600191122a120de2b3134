@@ -1,0 +1,25 @@
+package com.ty.springcore.beans;
+
+import lombok.Data;
+
+@Data
+public class MessageBean {
+	private String message;
+ MessageBean()
+ {
+	System.out.println("Inside default"); 
+ }
+MessageBean(String name)
+{
+	System.out.println(name);
+}
+ public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+
+}

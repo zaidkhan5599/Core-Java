@@ -1,0 +1,83 @@
+package com.dev.dao;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.dev.beans.Client;
+import com.dev.beans.Contract;
+import com.dev.beans.Inventories;
+import com.dev.beans.Product;
+import com.dev.repo.*;
+public class ClientImpl implements ClientDao {
+ClientRepo rep = new ClientRepo();
+Client cust = new Client();
+@Override
+public boolean changePassword(Integer client_id, String oldpassword, String newpassword) {
+	if(rep.map.containsKey(client_id))
+	{
+		cust = rep.map.get(client_id);
+		if(cust.getPassword().equals(oldpassword))
+		{
+			cust.setPassword(newpassword);
+			return true;
+		}
+		return false;
+	}
+	return false;
+	 
+}
+@Override
+public Contract addContract(Client c,Contract c1) {
+	
+	List ls1 =  new ArrayList<Product>();
+    Inventories i=c1.getList();
+    i.setLs(ls1);
+	cust =rep.map.get(c.getId());
+	cust.setCon(c1);
+	rep.map.put(c.getId(), cust);
+	return cust.getCon();
+	
+	
+	
+}
+@Override
+public Contract searchContract(Integer contract_id,Integer client_id,String Password) {
+	 cust = rep.map.get(client_id);
+	 if(cust.getPassword().equals(Password))
+{
+	if(cust.getCon().getContract_id().equals(contract_id))
+	{
+		return cust.getCon();
+	}
+	return  null;
+}
+	 return null;
+}
+@Override
+public Contract updateContract(Contract con, Integer client_id,String password) {
+	if(rep.map.containsKey(client_id))
+	{
+		if(rep.map.get(client_id).getPassword().equals(password))
+		{
+			re
+		}
+	}
+}
+@Override
+public Client deleteContract(Integer contract_id) {
+	// TODO Auto-generated method stub
+	return null;
+}
+@Override
+public List<Client> display() {
+	// TODO Auto-generated method stub
+	return null;
+}
+@Override
+public Contract updateContract(Contract con) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+}

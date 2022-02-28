@@ -1,0 +1,8 @@
+package com.capg.StudentJPA.dto;
+
+@Entity
+@Table(name="Student")
+public class Student {
+
+	@Id
+}

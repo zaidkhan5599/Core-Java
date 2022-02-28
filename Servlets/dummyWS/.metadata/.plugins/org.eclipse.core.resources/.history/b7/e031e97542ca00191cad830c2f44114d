@@ -1,0 +1,10 @@
+package com.capg.StudentJPA;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Studentoperation {
+	EntityManagerFactory efactory = Persistence.createEntityManagerFactory("persistence");
+	
+
+}

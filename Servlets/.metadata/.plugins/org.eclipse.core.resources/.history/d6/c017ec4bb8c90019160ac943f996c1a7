@@ -1,0 +1,91 @@
+package com.capg.dao;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.capg.beans.Client;
+import com.capg.beans.Contract;
+import com.capg.beans.Orders;
+
+
+public class AdminJDBCImpl implements AdminDao{
+	final String URL ="jdbc:mysql://localhost:3306/FMs?user=rootpassword=root";
+	Connection connection = null;
+	AdminJDBCImpl()
+	{
+	   connection =	DriverManager.getConnection(URL);
+	}
+	@Override
+	public boolean createProf(Client client) {
+		String query ="Insert into client values(?,?,?,?,?,?)";
+try(PreparedStatement statement = connection.prepareStatement(query);)
+{
+	statement.setInt(1, client.getId());
+	statement.setString(2, client.getEmail());
+	statement.setString(3, client.getCust_name());
+	statement.setString(4, client.getAddress());
+	statement.setString(5, client.getTelephone());
+	statement.setString(6, client.getPassword());
+	 int i=statement.executeUpdate();
+	 if(i>0)
+	 {
+		 System.out.println("Data Inserted");
+		 return true;
+	 }
+	 else
+	 {
+		 return false;
+	 }
+	
+}catch(SQLException exception)
+{
+	exception.printStackTrace();
+}
+
+		
+		
+}
+		
+	
+	@Override
+	public Client deleteProf(Integer client_id) {
+		
+	String sql ="delete from client where client_id=?";
+		try(PreparedStatement preparedStatement= connection.prepareStatement(sql))
+		{
+			
+		}
+	}
+	@Override
+	public boolean updateProf(Integer clientId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Client searchClient(Integer clientid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void displayContracts() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public List<Orders> displayAllorders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Client> displayAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+    	
+	
